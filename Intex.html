@@ -1,0 +1,71 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>LocalBoost Studio</title>
+<style>
+body{font-family:Arial,sans-serif;margin:0;background:#f5f5ff;color:#20203a}
+header,section{padding:24px;max-width:800px;margin:auto}
+header{background:#5144d8;color:white;max-width:none}
+h1{font-size:36px} .card{background:white;padding:20px;margin:14px 0;border-radius:15px}
+a,button{display:inline-block;background:#5144d8;color:white;padding:12px 18px;border:0;border-radius:9px;text-decoration:none;font-size:16px}
+.price{font-size:24px;font-weight:bold}
+input,textarea,select{box-sizing:border-box;width:100%;padding:12px;margin:8px 0;border:1px solid #ccc;border-radius:8px}
+</style>
+</head>
+<body>
+<header>
+<h1>LocalBoost Studio</h1>
+<p>Designs for local businesses | స్థానిక వ్యాపారాల కోసం డిజైన్లు</p>
+</header>
+<section>
+<h2>Promote your business!</h2>
+<p>Posters, menus and offer designs at affordable prices.</p>
+<p>మీ వ్యాపారానికి పోస్టర్లు, మెనూలు, ఆఫర్ డిజైన్లు సరసమైన ధరల్లో.</p>
+
+<div class="card">
+<h2>Starter Poster | ఒక పోస్టర్</h2>
+<p class="price">₹199</p>
+<p>One promotional design | ఒక ప్రచార డిజైన్</p>
+</div>
+<div class="card">
+<h2>Business Pack | బిజినెస్ ప్యాక్</h2>
+<p class="price">₹499</p>
+<p>Three designs | మూడు డిజైన్లు</p>
+</div>
+<div class="card">
+<h2>Menu / Price List | మెనూ / ధరల జాబితా</h2>
+<p class="price">₹399</p>
+</div>
+
+<div class="card">
+<h2>Place an order | ఆర్డర్ చేయండి</h2>
+<form id="order">
+<label>Name / వ్యాపారం పేరు</label>
+<input id="name" required>
+<label>Choose service / సేవ ఎంచుకోండి</label>
+<select id="service">
+<option>Poster - ₹199</option>
+<option>3 Designs - ₹499</option>
+<option>Menu - ₹399</option>
+</select>
+<label>Details / వివరాలు</label>
+<textarea id="details" required></textarea>
+<button type="submit">Order on WhatsApp</button>
+</form>
+</div>
+</section>
+<script>
+document.getElementById("order").onsubmit=function(e){
+e.preventDefault();
+let msg="New design enquiry\nName: "+
+document.getElementById("name").value+
+"\nService: "+document.getElementById("service").value+
+"\nDetails: "+document.getElementById("details").value;
+window.open("https://wa.me/917993158422?text="+encodeURIComponent(msg),"_blank");
+};
+</script>
+</body>
+</html>
